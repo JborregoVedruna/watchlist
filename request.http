@@ -1,0 +1,60 @@
+### Insertar DNI
+POST http://localhost:8080/api/v1/DNI/
+Content-Type: application/json
+
+{
+    "number": "12345678Z",
+    "frontImg": null,
+    "backImg": null,
+    "dniOwnerId" : 1
+}
+
+### Borrar DNI por id
+DELETE http://localhost:8080/api/v1/DNI/24
+
+#############################################
+
+### Insertar pelicula
+POST http://localhost:8080/api/v1/film/
+Content-Type: application/json
+
+{
+    "filmId": 0,
+    "title": "Mama en apuros",
+    "releaseDate": "2023-12-12"
+}
+
+### Obtener todas las peliculas
+GET http://localhost:8080/api/v1/film/all?page=0&size=1
+
+### Obtener peliculas entre dos fechas
+GET http://localhost:8080/api/v1/film/release_date?from=2023-01-01&to=2023-12-31
+
+### Obtener pelicula por id
+GET http://localhost:8080/api/v1/film/1
+
+### Editar pelicula por id
+PUT http://localhost:8080/api/v1/film/20
+Content-Type: application/json
+
+{
+    "title": "Mama en apuros 2",
+    "releaseDate": "2023-12-13"
+}
+
+### Borrar pelicula por id
+DELETE http://localhost:8080/api/v1/film/19
+
+### Obtener todas las peliculas vistas por un usuario
+GET http://localhost:8080/api/v1/film/user/2
+
+#############################################
+
+### Obtener todos los usuarios
+GET http://localhost:8080/api/v1/user/all
+
+### Obtener usuario por id
+GET http://localhost:8080/api/v1/user/1
+
+### Obtener usuario por nombre
+GET http://localhost:8080/api/v1/user/name?name=adm
