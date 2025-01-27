@@ -157,7 +157,9 @@ public class HandlerExceptionController extends ResponseEntityExceptionHandler{
             if (cause != null) {
                 props.put("cause", cause);
             } else {
-                props.put("cause", ex.getCause().getMessage());
+                Map<String, Object> causes = new HashMap<>();
+                causes.put("causeMsg", ex.getCause().getMessage());
+                props.put("cause", causes);
             }
 
             props.put("ex", ex.getClass().getSimpleName());
